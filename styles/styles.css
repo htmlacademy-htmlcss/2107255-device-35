@@ -1,5 +1,202 @@
+@font-face {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/rubik/rubik-400.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/rubik/rubik-700.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 800;
+	src: url("../fonts/raleway/raleway-800.woff2") format("woff2");
+	font-display: swap;
+}
+
+
+body {
+	margin: 0;
+
+	font: 18px / 30px "Rubik", "Arial", sans-serif;
+	color: #444444;
+
+	background-color: #ffffff;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
 	object-fit: contain;
+}
+
+.page-title {
+	font-family: "Raleway", "Verdana", sans-serif;
+	font-weight: 800;
+	font-size: 50px;
+	line-height: 50px;
+	color: #000000;
+}
+
+.page-link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.page-link-text {
+	font-family: "Raleway", "Verdana", sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 21px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000000;
+}
+
+.page-button {
+	background-color: transparent;
+}
+
+.page-field {
+	background-color: transparent;
+}
+
+
+/* Header */
+
+.site-search-text {
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+}
+
+.site-search-field::placeholder {
+	color: #000000;
+	opacity: 0.3;
+}
+
+.cart-counter {
+	font-size: 14px;
+	line-height: 17px;
+
+	background-color: #ffffff;
+}
+
+
+/* Footer */
+
+.page-footer {
+	color: #ffffff;
+
+	background-color: #444444;
+}
+
+.footer-link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.footer-address {
+	font-style: normal;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.footer-phone {
+	text-decoration: underline;
+}
+
+.footer-social-link {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Main Index */
+
+/* Slider */
+
+.feature-title {
+	font-size: 16px;
+}
+
+.feature-description {
+	font-size: 36px;
+	color: #000000;
+}
+
+.slider-pagination-button {
+	background-color: #ffffff;
+}
+
+/* Catalog Categories */
+
+.catalog-categories-title {
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: -0.02em;
+}
+
+/* Services */
+
+.services-button.is-current {
+	color: #ffe17f;
+
+	background-color: #000000;
+}
+
+/* On Order */
+
+.on-order-button {
+	font-size: 20px;
+	line-height: 23px;
+
+	background-color: #f0f0f0;
+}
+
+/* Two Columns */
+
+.about-transport-item {
+	font-weight: 700;
+	line-height: 20px;
+	letter-spacing: -0.02em;
+	color: #000000;
+}
+
+.contacts-subtitle {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.contacts-address {
+	font-style: normal;
+}
+
+.contacts-phone {
+	color: inherit;
+}
+
+/* Subscription */
+
+.subscription {
+	background-color: #f0f0f0;
+}
+
+.subscription-field {
+	font: inherit;
+	color: #444444;
+}
+
+.subscription-field::placeholder {
+	color: #444444;
+	opacity: 0.5;
 }
