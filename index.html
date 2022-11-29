@@ -10,20 +10,23 @@
 
 	<body>
 		<header class="page-header page-container">
-			<a class="logo-link" href="./index.html">
+			<a class="logo-link" href="./index.html" aria-current="page">
 				<img class="logo" src="./images/header-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
 			</a>
 
 			<form class="site-search-form" action="https://echo.htmlacademy.ru/" method="get">
 				<label>
 					<span class="visually-hidden">Поиск по сайту:</span>
-					<input class="site-search-field site-search-text page-field" type="search" name="site-search" placeholder="Поиск по сайту" required>
+					<input class="site-search-field page-field text-small" type="search" name="site-search" placeholder="Поиск по сайту" required>
 				</label>
-				<button class="site-search-button site-search-text page-button" type="submit">Найти</button>
+				<button class="site-search-button page-button text-small" type="submit">Найти</button>
 			</form>
 
 			<div class="user-menu">
-				<a class="user-menu-button login-button page-link" href="javascript:void(0)">Войти</a>
+				<div class="user-login">
+					<a class="user-menu-button login-button page-link" href="javascript:void(0)">Войти</a>
+				</div>
+
 				<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
 				<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
 					Корзина
@@ -32,8 +35,8 @@
 			</div>
 
 			<nav class="main-navigation">
-				<div class="catalog-navigation-container">
-					<button class="catalog-navigation-toggler page-button page-link-text" type="button">
+				<div class="catalog-navigation">
+					<button class="catalog-navigation-toggler page-button link-text-subtitle" type="button">
 						Каталог товаров
 						<span class="toggler-plus-minus"></span>
 					</button>
@@ -41,13 +44,13 @@
 
 				<ul class="site-navigation">
 					<li class="site-navigation-item">
-						<a class="site-navigation-link page-link-text" href="javascript:void(0)">Доставка</a>
+						<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
 					</li>
 					<li class="site-navigation-item">
-						<a class="site-navigation-link page-link-text" href="javascript:void(0)">Гарантия</a>
+						<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
 					</li>
 					<li class="site-navigation-item">
-						<a class="site-navigation-link page-link-text" href="javascript:void(0)">Контакты</a>
+						<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
 					</li>
 				</ul>
 			</nav>
@@ -68,7 +71,7 @@
 							<p>
 								Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
 							</p>
-							<a class="slider-link page-link-text" href="javascript:void(0)">Подробнее</a>
+							<a class="slider-link link-text-subtitle" href="javascript:void(0)">Подробнее</a>
 							<dl class="slider-features">
 								<div class="slider-feature">
 									<dt class="feature-title">Дальность полета</dt>
@@ -93,7 +96,7 @@
 				</div>
 
 				<div class="slider-pagination">
-					<button class="slider-pagination-button is-current" type="button">
+					<button class="slider-pagination-button" type="button" aria-current="true">
 						<span class="visually-hidden">1 слайд</span>
 					</button>
 					<button class="slider-pagination-button" type="button">
@@ -147,13 +150,13 @@
 
 				<ul class="services-list">
 					<li class="services-item">
-						<button class="services-button is-current page-link-text" type="button">Доставка</button>
+						<button class="services-button link-text-subtitle" type="button" aria-current="true">Доставка</button>
 					</li>
 					<li class="services-item">
-						<button class="services-button page-button page-link-text" type="button">Гарантия</button>
+						<button class="services-button page-button link-text-subtitle" type="button">Гарантия</button>
 					</li>
 					<li class="services-item">
-						<button class="services-button page-button page-link-text" type="button">Кредит</button>
+						<button class="services-button page-button link-text-subtitle" type="button">Кредит</button>
 					</li>
 				</ul>
 
@@ -170,7 +173,7 @@
 			<section class="on-order page-container">
 				<h2 class="visually-hidden">Доставка под заказ</h2>
 
-				<a class="on-order-button page-link-text" href="javascript:void(0)">Доставим редкий товар под заказ</a>
+				<a class="on-order-button link-text-subtitle" href="javascript:void(0)">Доставим редкий товар под заказ</a>
 			</section>
 
 			<div class="two-columns page-container">
@@ -184,12 +187,12 @@
 						Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:
 					</p>
 					<ul class="about-transport-list">
-						<li class="about-transport-item">Меловые линии</li>
-						<li class="about-transport-item">СДИК</li>
-						<li class="about-transport-item">ТоксБерри</li>
+						<li class="about-transport-item text-bold">Меловые линии</li>
+						<li class="about-transport-item text-bold">СДИК</li>
+						<li class="about-transport-item text-bold">ТоксБерри</li>
 					</ul>
 
-					<a class="page-link-text" href="javascript:void(0)">Подробнее о нас</a>
+					<a class="link-text-subtitle" href="javascript:void(0)">Подробнее о нас</a>
 				</section>
 
 				<section class="contacts">
@@ -210,7 +213,7 @@
 						<li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
 					</ul>
 
-					<a class="page-link-text" href="javascript:void(0)">Напишите нам</a>
+					<a class="link-text-subtitle" href="javascript:void(0)">Напишите нам</a>
 				</section>
 			</div>
 
@@ -228,7 +231,7 @@
 							<span class="visually-hidden">Ваш e-mail:</span>
 							<input class="subscription-field page-field" type="email" name="subscription-email" placeholder="Ваш e-mail" required>
 						</label>
-						<button class="subscription-button page-button page-link-text" type="submit">Подписаться</button>
+						<button class="subscription-button page-button link-text-subtitle" type="submit">Подписаться</button>
 					</form>
 					<span>Это бесплатно</span>
 				</div>
@@ -240,41 +243,41 @@
 				<img class="logo" src="./images/footer-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
 			</a>
 
-			<address class="footer-address">
+			<address class="footer-address text-small">
 				<p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
 			</address>
 
 			<nav class="footer-navigation">
 				<ul class="footer-navigation-list">
 					<li class="footer-navigation-item">
-						<a class="footer-navigation-link footer-link page-link-text" href="javascript:void(0)">Доставка</a>
+						<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
 					</li>
 					<li class="footer-navigation-item">
-						<a class="footer-navigation-link footer-link page-link-text" href="javascript:void(0)">Гарантия</a>
+						<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
 					</li>
 					<li class="footer-navigation-item">
-						<a class="footer-navigation-link footer-link page-link-text" href="javascript:void(0)">Контакты</a>
+						<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
 					</li>
 				</ul>
 			</nav>
 
-			<address class="footer-address">
+			<address class="footer-address text-small">
 				<a class="footer-phone footer-link" href="tel:+78128121212">Тел.: +7 (812) 812-12-12</a>
 			</address>
 
 			<ul class="footer-social">
 				<li class="footer-social-item">
-					<a class="footer-social-link social-link-telegram footer-link" href="https://t.me/htmlacademy" target="_blank">
+					<a class="footer-social-link social-link-telegram" href="https://t.me/htmlacademy" target="_blank">
 						<span class="visually-hidden">Мы в Telegram</span>
 					</a>
 				</li>
 				<li class="footer-social-item">
-					<a class="footer-social-link social-link-youtube footer-link" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
+					<a class="footer-social-link social-link-youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
 						<span class="visually-hidden">Мы на Youtube</span>
 					</a>
 				</li>
 				<li class="footer-social-item">
-					<a class="footer-social-link social-link-twitter footer-link" href="https://twitter.com/htmlacademy_ru" target="_blank">
+					<a class="footer-social-link social-link-twitter" href="https://twitter.com/htmlacademy_ru" target="_blank">
 						<span class="visually-hidden">Мы в Twitter</span>
 					</a>
 				</li>
@@ -285,5 +288,4 @@
 			</a>
 		</footer>
 	</body>
-
 </html>
