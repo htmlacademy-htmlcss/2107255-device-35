@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<header class="page-header page-container">
+		<header class="page-header container">
 			<div class="header-wrapper">
 				<a class="header-logo" href="./index.html" aria-current="page">
 					<img class="page-image" src="./images/header-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
@@ -19,27 +19,32 @@
 					<form class="site-search-form" action="https://echo.htmlacademy.ru/" method="get">
 						<label>
 							<span class="visually-hidden">Поиск по сайту:</span>
-							<input class="site-search-field page-field text-small" type="search" name="site-search" placeholder="Поиск по сайту" required>
+							<input class="site-search-field normalize-input text-small" type="search" name="site-search" placeholder="Поиск по сайту" required>
 						</label>
-						<button class="site-search-button page-button text-small" type="submit">Найти</button>
+						<button class="site-search-button normalize-button text-small" type="submit">Найти</button>
 					</form>
 
 					<div class="user-login">
 						<a class="user-menu-button login-button page-link" href="javascript:void(0)">Войти</a>
 					</div>
 
-					<div class="user-products">
-						<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
-						<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
-							Корзина
-							<span class="cart-counter flex-center">2</span>
-						</a>
-					</div>
+					<ul class="user-products reset-list">
+						<li class="user-products-item user-products-compare">
+							<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
+						</li>
+
+						<li class="user-products-item user-products-cart">
+							<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
+								Корзина
+								<span class="cart-counter flex-center">2</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 
 				<nav class="main-navigation">
 					<div class="catalog-navigation">
-						<button class="catalog-navigation-toggler page-button link-text-subtitle" type="button">
+						<button class="catalog-navigation-toggler normalize-button text-subtitle" type="button">
 							Каталог товаров
 							<span class="toggler-plus-minus"></span>
 						</button>
@@ -47,13 +52,13 @@
 
 					<ul class="site-navigation reset-list">
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Доставка</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Гарантия</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Контакты</a>
 						</li>
 					</ul>
 				</nav>
@@ -63,19 +68,19 @@
 		<main class="main-index main-container">
 			<h1 class="visually-hidden">Интернет-магазин гаджетов «Девайс»</h1>
 
-			<section class="main-slider page-container">
+			<section class="main-slider page-section container">
 				<h2 class="visually-hidden">Лучшие предложения нашего интернет-магазина</h2>
 
-				<ul class="slider-cards">
+				<ul class="slider-cards reset-list">
 					<li class="slider-card">
 						<img class="slider-image" src="./images/slider-product-1.png" width="560" height="560" alt="Квадрокоптер, стреляющий лазером.">
 
 						<div class="slider-info">
-							<h3 class="page-title">Порхает как бабочка, жалит как пчела!</h3>
-							<p>
+							<h3 class="slider-title page-title">Порхает как бабочка, жалит как пчела!</h3>
+							<p class="slider-description reset-paragraph">
 								Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
 							</p>
-							<a class="slider-link link-text-subtitle" href="javascript:void(0)">Подробнее</a>
+							<a class="slider-link text-subtitle button-yellow" href="javascript:void(0)">Подробнее</a>
 							<dl class="slider-features">
 								<div class="slider-feature">
 									<dt class="feature-title">Дальность полета</dt>
@@ -91,31 +96,31 @@
 				</ul>
 
 				<div class="slider-controls">
-					<button class="slider-button slider-button-prev page-button" type="button">
+					<button class="slider-button slider-button-prev normalize-button" type="button">
 						<span class="visually-hidden">Предыдущий слайд</span>
 					</button>
-					<button class="slider-button slider-button-next page-button" type="button">
+					<button class="slider-button slider-button-next normalize-button" type="button">
 						<span class="visually-hidden">Следующий слайд</span>
 					</button>
 				</div>
 
 				<div class="slider-pagination">
-					<button class="slider-pagination-button" type="button" aria-current="true">
+					<button class="slider-pagination-button slider-pagination-button-current normalize-button" type="button">
 						<span class="visually-hidden">1 слайд</span>
 					</button>
-					<button class="slider-pagination-button" type="button">
+					<button class="slider-pagination-button normalize-button" type="button">
 						<span class="visually-hidden">2 слайд</span>
 					</button>
-					<button class="slider-pagination-button" type="button">
+					<button class="slider-pagination-button normalize-button" type="button">
 						<span class="visually-hidden">3 слайд</span>
 					</button>
 				</div>
 			</section>
 
-			<section class="catalog-categories page-container">
+			<section class="catalog-categories page-section container">
 				<h2 class="visually-hidden">Каталог товаров</h2>
 
-				<ul class="catalog-categories-cards">
+				<ul class="catalog-categories-cards reset-list">
 					<li class="catalog-categories-card">
 						<a class="catalog-categories-link page-link" href="javascript:void(0)">
 							<h3 class="catalog-categories-title page-title">Виртуальная реальность</h3>
@@ -149,105 +154,117 @@
 				</ul>
 			</section>
 
-			<section class="services">
-				<div class="services-wrapper page-container">
+			<section class="services page-section">
+				<div class="services-wrapper container">
 					<h2 class="visually-hidden">Наши услуги</h2>
 
-					<ul class="services-list">
+					<ul class="services-list reset-list">
 						<li class="services-item">
-							<button class="services-button link-text-subtitle" type="button" aria-current="true">Доставка</button>
+							<button class="services-tab services-tab-selected text-subtitle button-yellow normalize-button" type="button">
+								Доставка
+							</button>
 						</li>
 						<li class="services-item">
-							<button class="services-button page-button link-text-subtitle" type="button">Гарантия</button>
+							<button class="services-tab text-subtitle button-yellow normalize-button" type="button">
+								Гарантия
+							</button>
 						</li>
 						<li class="services-item">
-							<button class="services-button page-button link-text-subtitle" type="button">Кредит</button>
+							<button class="services-tab text-subtitle button-yellow normalize-button" type="button">
+								Кредит
+							</button>
 						</li>
 					</ul>
 
-					<ul class="services-cards">
+					<ul class="services-cards reset-list">
 						<li class="services-card">
-							<h3 class="page-title">Доставка</h3>
-							<p>
-								Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
-							</p>
+							<div class="services-info">
+								<h3 class="services-title page-title">Доставка</h3>
+								<p class="reset-paragraph">
+									Мы с удовольствием доставим ваш товар прямо к&nbsp;вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
+								</p>
+							</div>
 						</li>
 					</ul>
 				</div>
 			</section>
 
-			<section class="on-order page-container">
+			<section class="on-order page-section container">
 				<h2 class="visually-hidden">Доставка под заказ</h2>
 
-				<a class="on-order-button link-text-subtitle" href="javascript:void(0)">Доставим редкий товар под заказ</a>
+				<a class="on-order-button page-link" href="javascript:void(0)">
+					<span class="on-order-button-text text-subtitle">Доставим редкий товар под заказ</span>
+				</a>
 			</section>
 
-			<div class="two-columns page-container">
+			<div class="company-info page-section container">
 				<section class="about">
-					<h2 class="page-title">О нас</h2>
-					<p>
+					<h2 class="company-info-title page-title">О нас</h2>
+
+					<p class="company-info-description">
 						Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
 					</p>
-
-					<p>
+					<p class="company-info-description">
 						Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:
 					</p>
-					<ul class="about-transport-list">
+					<ul class="about-transport-list reset-list company-info-row-gap">
 						<li class="about-transport-item text-bold">Меловые линии</li>
 						<li class="about-transport-item text-bold">СДИК</li>
 						<li class="about-transport-item text-bold">ТоксБерри</li>
 					</ul>
 
-					<a class="link-text-subtitle" href="javascript:void(0)">Подробнее о нас</a>
+					<a class="about-more text-subtitle button-yellow" href="javascript:void(0)">Подробнее о нас</a>
 				</section>
 
 				<section class="contacts">
-					<h2 class="page-title">Контакты</h2>
-					<p>
+					<h2 class="company-info-title page-title">Контакты</h2>
+
+					<p class="company-info-description">
 						Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки.
 					</p>
-
-					<h3 class="contacts-subtitle">Интернет-магазин «Девайс»</h3>
-					<address class="contacts-address">
-						<p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+					<h3 class="company-info-subtitle">Интернет-магазин «Девайс»</h3>
+					<address class="contacts-address company-info-row-gap">
+						Санкт-Петербург, набережная реки Карповки, 5, литера П.
 						<a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
 					</address>
-
-					<h3 class="contacts-subtitle">Время работы</h3>
-					<ul class="contacts-schedule">
+					<h3 class="company-info-subtitle">Время работы</h3>
+					<ul class="contacts-schedule reset-list company-info-row-gap">
 						<li class="contacts-schedule-item">пн—пт: с 10:00 до 22:00</li>
 						<li class="contacts-schedule-item">сб—вс: с 10:00 до 19:00</li>
 					</ul>
 
-					<a class="link-text-subtitle" href="javascript:void(0)">Напишите нам</a>
+					<a class="contacts-feedback text-subtitle button-yellow" href="javascript:void(0)">Напишите нам</a>
 				</section>
 			</div>
 
 			<section class="subscription">
-				<div class="subscription-wrapper page-container">
-					<div class="subscription-two-columns">
+				<div class="subscription-wrapper container">
+					<div class="subscription-info">
 						<h2 class="page-title">Подпишитесь на&nbsp;рассылку</h2>
-						<p>
-							Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.
+						<p class="subscription-description">
+							Еженедельный дайджест с обзорами новинок,<br>
+							длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.
 						</p>
 					</div>
 
-					<div class="subscription-two-columns">
+					<div class="subscription-form-container">
 						<form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
-							<label>
+							<label class="subscription-field-label">
 								<span class="visually-hidden">Ваш e-mail:</span>
-								<input class="subscription-field page-field" type="email" name="subscription-email" placeholder="Ваш e-mail" required>
+								<input class="subscription-field normalize-input" type="email" name="subscription-email" placeholder="Ваш e-mail" required>
 							</label>
-							<button class="subscription-button page-button link-text-subtitle" type="submit">Подписаться</button>
+							<button class="subscription-button text-subtitle button normalize-button" type="submit">
+								Подписаться
+							</button>
 						</form>
-						<span>Это бесплатно</span>
+						<span class="subscription-form-remark">Это бесплатно</span>
 					</div>
 					</div>
 			</section>
 		</main>
 
 		<footer class="page-footer">
-			<div class="footer-wrapper page-container">
+			<div class="footer-wrapper container">
 				<a class="logo-link" href="./index.html">
 					<img class="logo" src="./images/footer-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
 				</a>
@@ -259,13 +276,13 @@
 				<nav class="footer-navigation">
 					<ul class="footer-navigation-list">
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Доставка</a>
 						</li>
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Гарантия</a>
 						</li>
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Контакты</a>
 						</li>
 					</ul>
 				</nav>

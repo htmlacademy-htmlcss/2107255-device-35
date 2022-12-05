@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<header class="page-header page-container">
+		<header class="page-header container">
 			<div class="header-wrapper">
 				<a class="header-logo" href="./index.html">
 					<img class="page-image" src="./images/header-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
@@ -19,9 +19,9 @@
 					<form class="site-search-form" action="https://echo.htmlacademy.ru/" method="get">
 						<label>
 							<span class="visually-hidden">Поиск по сайту:</span>
-							<input class="site-search-field page-field text-small" type="search" name="site-search" value="Текст поиска" placeholder="Поиск по сайту" required>
+							<input class="site-search-field normalize-input text-small" type="search" name="site-search" value="Текст поиска" placeholder="Поиск по сайту" required>
 						</label>
-						<button class="site-search-button page-button text-small" type="submit">Найти</button>
+						<button class="site-search-button normalize-button text-small" type="submit">Найти</button>
 					</form>
 
 					<div class="user-login">
@@ -29,18 +29,23 @@
 						<a class="log-ut-button page-link" href="javascript:void(0)">Выйти</a>
 					</div>
 
-					<div class="user-products">
-						<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
-						<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
-							Корзина
-							<span class="cart-counter flex-center">2</span>
-						</a>
-					</div>
+					<ul class="user-products reset-list">
+						<li class="user-products-item user-products-compare">
+							<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
+						</li>
+
+						<li class="user-products-item user-products-cart">
+							<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
+								Корзина
+								<span class="cart-counter flex-center">2</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 
 				<nav class="main-navigation">
 					<div class="catalog-navigation">
-						<button class="catalog-navigation-toggler page-button link-text-subtitle" type="button">
+						<button class="catalog-navigation-toggler normalize-button text-subtitle" type="button">
 							Каталог товаров
 							<span class="toggler-plus-minus"></span>
 						</button>
@@ -48,13 +53,13 @@
 
 					<ul class="site-navigation reset-list">
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Доставка</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Гарантия</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
+							<a class="site-navigation-link text-subtitle" href="javascript:void(0)">Контакты</a>
 						</li>
 					</ul>
 				</nav>
@@ -62,7 +67,7 @@
 		</header>
 
 		<main class="main-inner main-container">
-			<header class="inner-header page-container">
+			<header class="inner-header container">
 				<h1 class="page-title">Моноподы для селфи</h1>
 
 				<ul class="breadcrumbs text-small">
@@ -78,7 +83,7 @@
 				</ul>
 			</header>
 
-			<section class="catalog-products page-container">
+			<section class="catalog-products container">
 				<h2 class="visually-hidden">Товары в категории «Моноподы для селфи»</h2>
 
 				<section class="catalog-filter">
@@ -95,7 +100,7 @@
 									</button>
 									<label>
 										<span class="visually-hidden">Ввести стоимость от</span>
-										<input class="range-input page-field" type="text" name="min-price" value="от 0" placeholder="от 0">
+										<input class="range-input normalize-input" type="text" name="min-price" value="от 0" placeholder="от 0">
 									</label>
 								</div>
 								<div class="range-max-price">
@@ -104,7 +109,7 @@
 									</button>
 									<label>
 										<span class="visually-hidden">Ввести стоимость до</span>
-										<input class="range-input page-field" type="text" name="max-price" value="до 5000" placeholder="до 5000">
+										<input class="range-input normalize-input" type="text" name="max-price" value="до 5000" placeholder="до 5000">
 									</label>
 								</div>
 							</div>
@@ -166,7 +171,7 @@
 							</ul>
 						</fieldset>
 
-						<button class="page-button link-text-subtitle" type="submit">Показать</button>
+						<button class="normalize-button text-subtitle" type="submit">Показать</button>
 					</form>
 				</section>
 
@@ -174,7 +179,7 @@
 					<section class="catalog-sorting">
 						<h3 class="catalog-sorting-title catalog-subtitle page-subtitle">Сортировка:</h3>
 
-						<select class="sorting-select page-field" name="catalog-sorting">
+						<select class="sorting-select normalize-input" name="catalog-sorting">
 							<option value="popular">Популярные</option>
 							<option value="new">Новинки</option>
 							<option value="price">По цене</option>
@@ -231,10 +236,10 @@
 							</li>
 						</ul>
 
-						<button class="catalog-show-more page-button link-text-subtitle" type="button">Загрузить ещё</button>
+						<button class="catalog-show-more normalize-button text-subtitle" type="button">Загрузить ещё</button>
 
 						<div class="catalog-pagination">
-							<a class="pagination-button link-text-subtitle" aria-disabled="true">Назад</a>
+							<a class="pagination-button text-subtitle" aria-disabled="true">Назад</a>
 
 							<ul class="pagination-list">
 								<li class="pagination-item">
@@ -254,14 +259,14 @@
 								</li>
 							</ul>
 
-							<a class="pagination-button link-text-subtitle" href="javascript:void(0)">Вперёд</a>
+							<a class="pagination-button text-subtitle" href="javascript:void(0)">Вперёд</a>
 						</div>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<footer class="page-footer page-container">
+		<footer class="page-footer container">
 			<div class="footer-wrapper">
 				<a class="logo-link" href="./index.html">
 					<img class="logo" src="./images/footer-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
@@ -274,13 +279,13 @@
 				<nav class="footer-navigation">
 					<ul class="footer-navigation-list">
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Доставка</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Доставка</a>
 						</li>
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Гарантия</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Гарантия</a>
 						</li>
 						<li class="footer-navigation-item">
-							<a class="footer-navigation-link footer-link link-text-subtitle" href="javascript:void(0)">Контакты</a>
+							<a class="footer-navigation-link footer-link text-subtitle" href="javascript:void(0)">Контакты</a>
 						</li>
 					</ul>
 				</nav>
