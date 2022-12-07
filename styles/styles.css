@@ -799,9 +799,12 @@ img {
 /* Catalog */
 
 .catalog {
+	background-color: #f0f0f0;
+}
+
+.catalog-wrapper {
 	display: grid;
 	grid-template-columns: 320px 1fr;
-	background-color: #f0f0f0;
 }
 
 .catalog-subtitle {
