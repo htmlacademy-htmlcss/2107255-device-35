@@ -11,31 +11,31 @@
 	<body>
 		<header class="page-header container">
 			<div class="header-wrapper header-wrapper-inner">
-				<a class="header-logo" href="./index.html">
-					<img class="page-image" src="./images/header-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
+				<a class="logo header-logo" href="./index.html">
+					<img class="logo-image" src="./images/header-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
 				</a>
 
 				<div class="user-menu">
 					<form class="site-search-form" action="https://echo.htmlacademy.ru/" method="get">
-						<label>
+						<label class="site-search-label">
 							<span class="visually-hidden">Поиск по сайту:</span>
-							<input class="site-search-field text-small normalize-input" type="search" name="site-search" value="Текст поиска" placeholder="Поиск по сайту" required>
+							<input class="site-search-field text-small" type="search" name="site-search" value="Текст поиска" placeholder="Поиск по сайту" autocomplete="off" required>
 						</label>
 						<button class="site-search-button text-small normalize-button" type="submit">Найти</button>
 					</form>
 
 					<div class="user-login">
-						<a class="user-menu-button login-button page-link" href="javascript:void(0)">Коля Петухов</a>
+						<a class="user-menu-button login-button header-link" href="javascript:void(0)">Коля Петухов</a>
 						<a class="log-ut-button page-link" href="javascript:void(0)">Выйти</a>
 					</div>
 
 					<ul class="user-products reset-list">
-						<li class="user-products-item user-products-compare">
-							<a class="user-menu-button compare-button page-link" href="javascript:void(0)">Сравнить</a>
+						<li class="user-products-item compare-item">
+							<a class="user-menu-button compare-button header-link" href="javascript:void(0)">Сравнить</a>
 						</li>
 
-						<li class="user-products-item user-products-cart">
-							<a class="user-menu-button cart-button page-link" href="javascript:void(0)">
+						<li class="user-products-item cart-item">
+							<a class="user-menu-button cart-button header-link" href="javascript:void(0)">
 								Корзина
 								<span class="cart-counter flex-center">2</span>
 							</a>
@@ -46,8 +46,8 @@
 				<nav class="main-navigation">
 					<div class="catalog-navigation">
 						<button class="catalog-navigation-toggler text-subtitle normalize-button" type="button">
-							Каталог товаров
-							<span class="toggler-plus-minus"></span>
+							<span class="toggler-text">Каталог товаров</span>
+							<span class="toggler-icon flex-center"></span>
 						</button>
 					</div>
 
@@ -78,7 +78,7 @@
 						<a class="breadcrumbs-link page-link" href="javascript:void(0)">Каталог товаров</a>
 					</li>
 					<li class="breadcrumbs-item">
-						<span class="breadcrumbs-link page-link">Моноподы для селфи</span>
+						<a class="breadcrumbs-link page-link" href="./catalog.html" aria-current="page">Моноподы для селфи</a>
 					</li>
 				</ul>
 			</header>
@@ -281,7 +281,7 @@
 		<footer class="page-footer">
 			<div class="footer-wrapper container">
 				<div class="footer-left-column">
-					<a class="footer-logo" href="./index.html" aria-current="page">
+					<a class="footer-logo" href="./index.html">
 						<img class="page-image" src="./images/footer-logo.svg" width="145" height="36" alt="Логотип интернет-магазина «Device».">
 					</a>
 
