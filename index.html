@@ -25,16 +25,20 @@
 					</form>
 
 					<div class="user-login">
-						<a class="user-menu-button login-button header-link" href="javascript:void(0)">Войти</a>
+						<a class="user-menu-button login-button page-link interactive-element" href="javascript:void(0)">
+							Войти
+						</a>
 					</div>
 
 					<ul class="user-products reset-list">
 						<li class="user-products-item compare-item">
-							<a class="user-menu-button compare-button header-link" href="javascript:void(0)">Сравнить</a>
+							<a class="user-menu-button compare-button page-link interactive-element" href="javascript:void(0)">
+								Сравнить
+							</a>
 						</li>
 
 						<li class="user-products-item cart-item">
-							<a class="user-menu-button cart-button header-link" href="javascript:void(0)">
+							<a class="user-menu-button cart-button page-link interactive-element" href="javascript:void(0)">
 								Корзина
 								<span class="cart-counter flex-center">2</span>
 							</a>
@@ -50,15 +54,23 @@
 						</button>
 					</div>
 
+					<!-- Для выделения текущей страницы нужно добавить ссылке aria-current="page" -->
+
 					<ul class="site-navigation reset-list">
 						<li class="site-navigation-item">
-							<a class="site-navigation-link text-subtitle header-link" href="javascript:void(0)">Доставка</a>
+							<a class="site-navigation-link text-subtitle interactive-element" href="javascript:void(0)">
+								Доставка
+							</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link text-subtitle header-link" href="javascript:void(0)">Гарантия</a>
+							<a class="site-navigation-link text-subtitle interactive-element" href="javascript:void(0)">
+								Гарантия
+							</a>
 						</li>
 						<li class="site-navigation-item">
-							<a class="site-navigation-link text-subtitle header-link" href="javascript:void(0)">Контакты</a>
+							<a class="site-navigation-link text-subtitle interactive-element" href="javascript:void(0)">
+								Контакты
+							</a>
 						</li>
 					</ul>
 				</nav>
@@ -72,7 +84,7 @@
 				<h2 class="visually-hidden">Лучшие предложения нашего интернет-магазина</h2>
 
 				<ul class="slider-cards reset-list">
-					<li class="slider-card">
+					<li class="slider-card" data-slide-count="01">
 						<img class="slider-image" src="./images/slider-product-1.png" width="560" height="560" alt="Квадрокоптер, стреляющий лазером.">
 
 						<div class="slider-info">
@@ -98,22 +110,22 @@
 				</ul>
 
 				<div class="slider-controls">
-					<button class="slider-button slider-button-prev normalize-button" type="button">
+					<button class="slider-button slider-button-prev normalize-button interactive-element" type="button">
 						<span class="visually-hidden">Предыдущий слайд</span>
 					</button>
-					<button class="slider-button slider-button-next normalize-button" type="button">
+					<button class="slider-button slider-button-next normalize-button interactive-element" type="button">
 						<span class="visually-hidden">Следующий слайд</span>
 					</button>
 				</div>
 
 				<div class="slider-pagination">
-					<button class="slider-pagination-button slider-pagination-button-current normalize-button" type="button">
+					<button class="slider-pagination-button is-current normalize-button interactive-element" type="button">
 						<span class="visually-hidden">1 слайд</span>
 					</button>
-					<button class="slider-pagination-button normalize-button" type="button">
+					<button class="slider-pagination-button normalize-button interactive-element" type="button">
 						<span class="visually-hidden">2 слайд</span>
 					</button>
-					<button class="slider-pagination-button normalize-button" type="button">
+					<button class="slider-pagination-button normalize-button interactive-element" type="button">
 						<span class="visually-hidden">3 слайд</span>
 					</button>
 				</div>
@@ -122,35 +134,35 @@
 			<section class="catalog-categories page-section container">
 				<h2 class="visually-hidden">Каталог товаров</h2>
 
-				<ul class="catalog-categories-cards reset-list">
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="javascript:void(0)">
-							<h3 class="catalog-categories-title page-title">Виртуальная реальность</h3>
+				<ul class="categories-cards reset-list">
+					<li class="categories-card">
+						<a class="categories-link categories-link-virtual page-link" href="javascript:void(0)">
+							<h3 class="categories-title page-title">Виртуальная реальность</h3>
 						</a>
 					</li>
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="./catalog.html">
-							<h3 class="catalog-categories-title page-title">Моноподы для&nbsp;селфи</h3>
+					<li class="categories-card">
+						<a class="categories-link categories-link-monopods page-link" href="./catalog.html">
+							<h3 class="categories-title page-title">Моноподы для&nbsp;селфи</h3>
 						</a>
 					</li>
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="javascript:void(0)">
-							<h3 class="catalog-categories-title page-title">Экшн-камеры</h3>
+					<li class="categories-card">
+						<a class="categories-link categories-link-cameras page-link" href="javascript:void(0)">
+							<h3 class="categories-title page-title">Экшн-камеры</h3>
 						</a>
 					</li>
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="javascript:void(0)">
-							<h3 class="catalog-categories-title page-title">Фитнес-браслеты</h3>
+					<li class="categories-card">
+						<a class="categories-link categories-link-bracelets page-link" href="javascript:void(0)">
+							<h3 class="categories-title page-title">Фитнес-браслеты</h3>
 						</a>
 					</li>
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="javascript:void(0)">
-							<h3 class="catalog-categories-title page-title">Умные часы</h3>
+					<li class="categories-card">
+						<a class="categories-link categories-link-watches page-link" href="javascript:void(0)">
+							<h3 class="categories-title page-title">Умные часы</h3>
 						</a>
 					</li>
-					<li class="catalog-categories-card">
-						<a class="catalog-categories-link page-link" href="javascript:void(0)">
-							<h3 class="catalog-categories-title page-title">Квадрокоптеры</h3>
+					<li class="categories-card">
+						<a class="categories-link categories-link-quadcopters page-link" href="javascript:void(0)">
+							<h3 class="categories-title page-title">Квадрокоптеры</h3>
 						</a>
 					</li>
 				</ul>
@@ -165,23 +177,23 @@
 					<ul class="services-list reset-list">
 						<li class="services-item">
 							<button class="services-tab services-tab-selected text-subtitle normalize-button" type="button">
-								Доставка
+								<span class="services-tab-text">Доставка</span>
 							</button>
 						</li>
 						<li class="services-item">
 							<button class="services-tab button-yellow text-subtitle normalize-button" type="button">
-								Гарантия
+								<span class="services-tab-text">Гарантия</span>
 							</button>
 						</li>
 						<li class="services-item">
 							<button class="services-tab button-yellow text-subtitle normalize-button" type="button">
-								Кредит
+								<span class="services-tab-text">Кредит</span>
 							</button>
 						</li>
 					</ul>
 
 					<ul class="services-cards reset-list">
-						<li class="services-card">
+						<li class="services-card services-delivery">
 							<div class="services-info">
 								<h3 class="services-title page-title">Доставка</h3>
 								<p class="reset-paragraph">
@@ -197,7 +209,8 @@
 				<h2 class="visually-hidden">Доставка под заказ</h2>
 
 				<a class="on-order-button page-link" href="javascript:void(0)">
-					<span class="on-order-button-text text-subtitle">Доставим редкий товар под заказ</span>
+					<span class="on-order-text text-subtitle">Доставим редкий товар под заказ</span>
+					<span class="on-order-icon flex-center"></span>
 				</a>
 			</section>
 
