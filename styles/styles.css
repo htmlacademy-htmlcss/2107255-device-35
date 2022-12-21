@@ -599,34 +599,41 @@ img {
 }
 
 .footer-left-column {
+	position: relative;
+
 	width: 240px;
 	margin: 0 113px 16px 0;
 	padding-bottom: 71px;
 }
 
+.footer-left-column::after {
+	position: absolute;
+	bottom: 0;
+	left: 1px;
+
+	width: 80px;
+	height: 7px;
+
+	background-color: #ffc700;
+
+	content: "";
+}
+
 .footer-center-column {
 	display: grid;
 	align-content: start;
-	max-width: 500px;
-	margin-top: 66px;
+	max-width: 454px;
+	margin-top: 65px;
 }
 
 .footer-right-column {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
 	width: 175px;
 	margin: 78px 0 4px auto;
 }
 
-.footer-link {
-	text-decoration: none;
-	color: inherit;
-}
-
 .footer-logo {
-	display: block;
-	width: 145px;
 	margin: 0 0 35px 1px;
 }
 
@@ -636,7 +643,7 @@ img {
 }
 
 .footer-navigation {
-	margin-bottom: 42px;
+	margin-bottom: 47px;
 }
 
 .footer-navigation-list {
@@ -645,21 +652,51 @@ img {
 }
 
 .footer-navigation-item {
-	margin: 0 25px 10px 0;
+	margin: 0 26px 6px 0;
 }
 
 .footer-navigation-item:nth-child(3n) {
 	margin-right: 0;
 }
 
+.footer-link {
+	text-decoration: none;
+	color: inherit;
+
+	transition: color 150ms ease-out, opacity 150ms ease-out;
+}
+
 .footer-navigation-link {
+	position: relative;
+
 	display: block;
-	padding: 9px 1px 10px 5px;
+	padding: 10px 1px 9px 5px;
+}
+
+.footer-navigation-link::after {
+	position: absolute;
+	left: 5px;
+	bottom: 4px;
+
+	width: calc(100% - 9px);
+	height: 2px;
+
+	background-color: rgba(255, 255, 255, 0);
+
+	transition: background-color 150ms ease-out;
+
+	content: "";
+}
+
+.footer-navigation-link:hover::after,
+.footer-navigation-link:active::after {
+	background-color: #ffc700;
 }
 
 .footer-social {
 	display: flex;
 	justify-self: center;
+	max-width: 360px;
 }
 
 .footer-social-item {
@@ -671,12 +708,75 @@ img {
 }
 
 .footer-social-link {
-	display: flex;
+	position: relative;
+	z-index: 1;
+
 	width: 40px;
 	height: 40px;
 
-	background: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 50%;
+
+	transition: background-color 150ms ease-out;
+}
+
+.footer-social-link::before {
+	width: 18px;
+	height: 18px;
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+
+	transition: opacity 150ms ease-out;
+
+	content: "";
+}
+
+.social-link-telegram::before {
+	background-image: url("../icons/stack.svg#footer-logo-telegram");
+}
+
+.social-link-youtube::before {
+	background-image: url("../icons/stack.svg#footer-logo-youtube");
+}
+
+.social-link-twitter::before {
+	background-image: url("../icons/stack.svg#footer-logo-twitter");
+}
+
+.footer-social-link::after {
+	position: absolute;
+	z-index: -1;
+
+	width: 100%;
+	height: 100%;
+
+	content: "";
+}
+
+.footer-social-link:hover,
+.footer-social-link:active {
+	background-color: #ffc700;
+}
+
+.footer-social-link:focus {
+	outline: none;
+}
+
+.footer-social-link:active::before {
+	opacity: 0.3;
+}
+
+.footer-social-link:focus-visible::after {
+	outline: 2px solid #af4fff;
+	outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+	.footer-social-link:focus::after {
+		outline: 2px solid #af4fff;
+		outline-offset: 2px;
+	}
 }
 
 .footer-right-column > :nth-last-child(2) {
@@ -684,15 +784,71 @@ img {
 }
 
 .footer-phone {
-	display: block;
+	display: inline-block;
 
 	text-decoration: underline;
 }
 
+.footer-link:hover {
+	color: #ffc700;
+}
+
+.footer-link:focus-visible {
+	outline: 2px solid #af4fff;
+	outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+	.footer-link:focus {
+		outline: 2px solid #af4fff;
+		outline-offset: 2px;
+	}
+}
+
+.footer-link:active {
+	color: #ffc700;
+	opacity: 0.3;
+}
+
 .footer-developer {
+	align-self: flex-end;
 	width: 115px;
 	height: 33px;
 	margin-top: auto;
+}
+
+.footer-developer::before {
+	display: block;
+	width: 115px;
+	height: 33px;
+
+	mask: url("../icons/stack.svg#footer-logo-developer") no-repeat center / contain;
+	background-color: #ffc700;
+
+	transition: background-color 150ms ease-out, opacity 150ms ease-out;
+
+	content: "";
+}
+
+.footer-developer:hover::before {
+	background-color: #ffffff;
+}
+
+.footer-developer:focus-visible {
+	outline: 2px solid #af4fff;
+	outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+	.footer-developer:focus {
+		outline: 2px solid #af4fff;
+		outline-offset: 2px;
+	}
+}
+
+.footer-developer:active::before {
+	background-color: #ffffff;
+	opacity: 0.3;
 }
 
 
