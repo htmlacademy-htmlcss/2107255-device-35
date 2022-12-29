@@ -111,23 +111,27 @@
 								<legend class="filter-group-title range-slider-title text-bold">Стоимость</legend>
 
 								<div class="filter-range-slider">
-									<div class="range-price range-price-min">
-										<button class="range-bullet normalize-button" type="button">
-											<span class="visually-hidden">Изменить стоимость от</span>
-										</button>
-										<label>
-											<span class="visually-hidden">Ввести стоимость от</span>
-											<input class="range-input normalize-input" type="text" name="min-price" value="от 0" placeholder="от 0">
-										</label>
-									</div>
-									<div class="range-price range-price-max">
-										<button class="range-bullet normalize-button" type="button">
-											<span class="visually-hidden">Изменить стоимость до</span>
-										</button>
-										<label>
-											<span class="visually-hidden">Ввести стоимость до</span>
-											<input class="range-input normalize-input" type="text" name="max-price" value="до 5000" placeholder="до 5000" style="width: 59px;">
-										</label>
+									<div class="range-scale">
+										<div class="range-bar">
+											<div class="range-price range-price-min">
+												<button class="range-toggle normalize-button focus-outline" type="button">
+													<span class="visually-hidden">Изменить минимальную стоимость</span>
+												</button>
+												<label>
+													<span class="visually-hidden">Ввести минимальную стоимость</span>
+													<input class="range-field normalize-input focus-outline" type="text" name="min-price" placeholder="от 0">
+												</label>
+											</div>
+											<div class="range-price range-price-max">
+												<button class="range-toggle normalize-button focus-outline" type="button">
+													<span class="visually-hidden">Изменить максимальную стоимость</span>
+												</button>
+												<label>
+													<span class="visually-hidden">Ввести максимальную стоимость</span>
+													<input class="range-field normalize-input focus-outline" type="text" name="max-price" placeholder="до 5000">
+												</label>
+											</div>
+										</div>
 									</div>
 								</div>
 							</fieldset>
@@ -136,34 +140,39 @@
 								<legend class="filter-group-title text-bold">Цвет</legend>
 
 								<ul class="filter-list text-small reset-list">
-									<li class="filter-item filter-item-checkbox">
-										<label class="filter-input-label">
-											<input class="filter-input filter-checkbox" type="checkbox" name="color" value="black" checked>
-											Черный
+									<li class="filter-item filter-checkbox">
+										<label class="filter-control">
+											<input class="control-input control-checkbox visually-hidden" type="checkbox" name="color" value="black" checked>
+											<span class="control-mark checkbox-mark flex-center"></span>
+											<span class="control-label">Черный</span>
 										</label>
 									</li>
-									<li class="filter-item filter-item-checkbox">
-										<label class="filter-input-label">
-											<input class="filter-input filter-checkbox" type="checkbox" name="color" value="white" checked>
-											Белый
+									<li class="filter-item filter-checkbox">
+										<label class="filter-control">
+											<input class="control-input control-checkbox visually-hidden" type="checkbox" name="color" value="white" checked>
+											<span class="control-mark checkbox-mark flex-center"></span>
+											<span class="control-label">Белый</span>
 										</label>
 									</li>
-									<li class="filter-item filter-item-checkbox">
-										<label class="filter-input-label">
-											<input class="filter-input filter-checkbox" type="checkbox" name="color" value="blue">
-											Синий
+									<li class="filter-item filter-checkbox">
+										<label class="filter-control">
+											<input class="control-input control-checkbox visually-hidden" type="checkbox" name="color" value="blue">
+											<span class="control-mark checkbox-mark flex-center"></span>
+											<span class="control-label">Синий</span>
 										</label>
 									</li>
-									<li class="filter-item filter-item-checkbox">
-										<label class="filter-input-label">
-											<input class="filter-input filter-checkbox" type="checkbox" name="color" value="red">
-											Красный
+									<li class="filter-item filter-checkbox">
+										<label class="filter-control">
+											<input class="control-input control-checkbox visually-hidden" type="checkbox" name="color" value="red">
+											<span class="control-mark checkbox-mark flex-center"></span>
+											<span class="control-label">Красный</span>
 										</label>
 									</li>
-									<li class="filter-item filter-item-checkbox">
-										<label class="filter-input-label">
-											<input class="filter-input filter-checkbox" type="checkbox" name="color" value="pink">
-											Розовый
+									<li class="filter-item filter-checkbox">
+										<label class="filter-control">
+											<input class="control-input control-checkbox visually-hidden" type="checkbox" name="color" value="pink">
+											<span class="control-mark checkbox-mark flex-center"></span>
+											<span class="control-label">Розовый</span>
 										</label>
 									</li>
 								</ul>
@@ -173,22 +182,24 @@
 								<legend class="filter-group-title text-bold">Bluetooth</legend>
 
 								<ul class="filter-list text-small reset-list">
-									<li class="filter-item filter-item-radio">
-										<label class="filter-input-label">
-											<input class="filter-input filter-radio" type="radio" name="bluetooth" value="yes" checked>
-											Есть
+									<li class="filter-item filter-radio">
+										<label class="filter-control">
+											<input class="control-input control-radio visually-hidden" type="radio" name="bluetooth" value="yes" checked>
+											<span class="control-mark radio-mark flex-center"></span>
+											<span class="control-label">Есть</span>
 										</label>
 									</li>
-									<li class="filter-item filter-item-radio">
-										<label class="filter-input-label">
-											<input class="filter-input filter-radio" type="radio" name="bluetooth" value="no">
-											Нет
+									<li class="filter-item filter-radio">
+										<label class="filter-control">
+											<input class="control-input control-radio visually-hidden" type="radio" name="bluetooth" value="no">
+											<span class="control-mark radio-mark flex-center"></span>
+											<span class="control-label">Нет</span>
 										</label>
 									</li>
 								</ul>
 							</fieldset>
 
-							<div class="filter-button-wrapper button-yellow-wrapper">
+							<div class="button-yellow-wrapper">
 								<button class="filter-button button-yellow text-subtitle normalize-button" type="submit">
 									Показать
 								</button>

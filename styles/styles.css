@@ -459,13 +459,13 @@ img {
 	min-width: 21px;
 	height: 21px;
 	margin: 5px -3px 0 0;
-	padding: 0 2px;
+	padding: 0 1px;
 
 	font-size: 14px;
 	line-height: 17px;
 
 	background-color: #ffffff;
-	border-radius: 50%;
+	border-radius: 50px;
 }
 
 /* Header Navigation */
@@ -878,8 +878,6 @@ img {
 
 .button-yellow:hover::before {
 	transform: translate(-50%, -50%) scaleY(1);
-
-	transition: 100ms ease-in;
 }
 
 .button-yellow:focus {
@@ -911,14 +909,14 @@ img {
 }
 
 
-/* Main Index */
+/* --- Main Index --- */
 
 .page-section {
 	margin-bottom: 70px;
 }
 
 
-/* Main Slider */
+/* --- Main Slider --- */
 
 .main-slider {
 	position: relative;
@@ -1095,7 +1093,7 @@ img {
 
 	background-color: #ffe17f;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-size: 160px 160px;
 
 	transition: background-color 150ms ease-out;
 
@@ -1475,7 +1473,7 @@ img {
 	display: grid;
 	grid-template-columns: 420px 1fr;
 	column-gap: 180px;
-	padding: 0 0 0 7px;
+	padding: 0 7px;
 }
 
 .subscription-description {
@@ -1642,72 +1640,163 @@ img {
 /* --- Catalog Filter --- */
 
 .catalog-filter {
-	padding: 25px 40px 64px 46px;
+	padding: 25px 40px 64px 60px;
 }
 
 .catalog-filter-title {
-	margin: 0 20px 60px 14px;
+	margin: 0 20px 60px 0;
 }
 
 .filter-group {
-	margin: 0 20px 35px 14px;
+	margin: 0 20px 35px 0;
 	padding: 0;
 
 	border: 0;
 }
 
-.range-slider-group {
-	margin-left: 0;
-}
-
 .filter-group-title {
+	position: relative;
+
 	width: 100%;
 	margin-bottom: 20px;
 	padding: 12px 0 0 0;
 }
 
+.filter-group-title::before {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+
+	width: 100%;
+
+	border-bottom: 3px solid #000000;
+
+	content: "";
+}
+
+.filter-button {
+	width: 210px;
+}
+
+.filter-button::before,
+.filter-button::after {
+	max-width: 220px;
+}
+
+
+/* Range Slider */
+
 .range-slider-title {
-	margin-left: 14px;
-	padding-right: 14px;
+	margin-bottom: 28px;
+}
+
+.filter-range-slider {
+	min-height: 35px;
+}
+
+.range-scale {
+	position: relative;
+
+	height: 2px;
+
+	background-color: #dcdcdc;
+}
+
+.range-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 119px;
+	height: 100%;
+
+	background-color: #000000;
 }
 
 .range-price {
+	position: absolute;
+	top: -8px;
+
 	display: grid;
 	row-gap: 4px;
-	justify-content: start;
 }
 
-.range-bullet {
+.range-price-min {
+	left: 0;
+	transform: translateX(-50%);
+}
+
+.range-price-max {
+	right: 0;
+	transform: translateX(50%);
+}
+
+.range-toggle {
+	position: relative;
+
 	justify-self: center;
 	width: 18px;
 	height: 18px;
 
+	background-color: #f0f0f0;
+}
+
+.range-toggle::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	width: 100%;
+	height: 100%;
+
 	background-color: #ebebeb;
 	border: 2px solid #000000;
 	border-radius: 50%;
+
+	transition: 50ms ease-out;
+
+	content: "";
 }
 
-.range-input {
+.range-toggle:hover::before {
+	opacity: 0.5;
+}
+
+.range-toggle:active::before {
+	background-color: #000000;
+	opacity: 1;
+}
+
+.range-field {
 	display: block;
-	width: 30px;
-	padding: 0 1px;
+	width: 32px;
+	height: 18px;
+	padding: 2px 1px 0 2px;
 
 	font-size: 14px;
 	line-height: 20px;
 	text-align: center;
-	color: rgba(0, 0, 0, 0.3);
-}
-
-.range-input::placeholder {
 	color: #000000;
-	opacity: 0.6;
 }
 
-.filter-item-checkbox {
+.range-price-max .range-field {
+	width: 72px;
+}
+
+.range-field::placeholder {
+	color: #000000;
+	opacity: 0.3;
+}
+
+
+/* Сheckboxes and Radios */
+
+.filter-checkbox {
 	margin-bottom: 17px;
 }
 
-.filter-item-radio {
+.filter-radio {
 	margin-bottom: 20px;
 }
 
@@ -1715,16 +1804,107 @@ img {
 	margin-bottom: 0;
 }
 
-.filter-input {
-	margin: 0 16px 0 0;
+.filter-control {
+	display: inline-flex;
+
+	vertical-align: top;
 }
 
-.filter-button-wrapper {
-	margin-left: 14px;
+.control-mark {
+	position: relative;
+
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+
+	transition: opacity 50ms ease-out;
+
+	cursor: pointer;
 }
 
-.filter-button {
-	width: 210px;
+.control-mark::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	border: 2px solid #cccccc;
+
+	content: "";
+}
+
+.control-input:checked + .control-mark::after {
+	border-color: #000000;
+}
+
+.checkbox-mark::after {
+	border-radius: 3px;
+}
+
+.radio-mark::after {
+	border-radius: 50%;
+}
+
+.control-checkbox:checked + .checkbox-mark::before {
+	width: 10px;
+	height: 10px;
+
+	background: url("../icons/stack.svg#filter-tick");
+	background-repeat: no-repeat;
+	background-size: 10px 10px;
+
+	content: "";
+}
+
+.control-radio:checked + .radio-mark::before {
+	width: 8px;
+	height: 8px;
+
+	background-color: #000000;
+	border-radius: 50%;
+
+	transform: translateX(5%);
+
+	content: "";
+}
+
+.control-label {
+	padding-left: 16px;
+
+	transition: opacity 50ms ease-out;
+
+	cursor: pointer;
+}
+
+.filter-control:hover .control-mark,
+.filter-control:hover .control-label {
+	opacity: 0.6;
+}
+
+.control-input:focus-visible + .control-mark {
+	outline: 2px solid #af4fff;
+	outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+	.control-input:focus + .control-mark {
+		outline: 2px solid #af4fff;
+		outline-offset: 2px;
+	}
+}
+
+.filter-control:active .control-mark,
+.filter-control:active .control-label {
+	opacity: 0.3;
+}
+
+.control-input:disabled + .control-mark,
+.control-input:disabled ~ .control-label {
+	opacity: 0.1;
+
+	pointer-events: none;
 }
 
 
