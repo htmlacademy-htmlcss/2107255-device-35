@@ -257,6 +257,7 @@ img {
 
 .site-search-form {
 	display: flex;
+	justify-self: start;
 }
 
 .site-search-label {
@@ -285,7 +286,10 @@ img {
 	opacity: 0.3;
 }
 
-.site-search-field::-webkit-search-cancel-button {
+.site-search-field::-webkit-search-decoration,
+.site-search-field::-webkit-search-cancel-button,
+.site-search-field::-webkit-search-results-button,
+.site-search-field::-webkit-search-results-decoration {
 	margin: 0;
 
 	appearance: none;
@@ -471,18 +475,20 @@ img {
 /* Header Navigation */
 
 .main-navigation {
+	position: relative;
+	z-index: 2;
+
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 }
 
-.catalog-navigation {
-	position: relative;
-	z-index: 2;
-}
-
 .catalog-navigation:focus-within .toggler-icon::before {
 	content: none;
+}
+
+.catalog-navigation:focus-within .catalog-navigation-list {
+	display: grid;
 }
 
 .catalog-navigation-toggler {
@@ -531,6 +537,58 @@ img {
 .catalog-navigation-toggler:hover .toggler-icon,
 .catalog-navigation-toggler:active .toggler-icon {
 	opacity: 1;
+}
+
+.catalog-navigation-list {
+	position: absolute;
+	top: calc(100% - 19px);
+	left: -60px;
+	z-index: -1;
+
+	display: none;
+	grid-template-columns: 222px 182px 222px;
+	gap: 8px 30px;
+	align-content: start;
+	width: calc(100% + 115px);
+	min-height: 180px;
+	padding: 28px 57px 27px;
+
+	font-size: 16px;
+	line-height: 18px;
+
+	background-color: #ffe17f;
+}
+
+.catalog-navigation-item:nth-child(6) {
+	grid-column: 1 / 2;
+}
+
+.catalog-navigation-item:nth-child(7) {
+	grid-row: 2 / 3;
+	grid-column: 3 / 4;
+}
+
+.catalog-navigation-link {
+	position: relative;
+
+	display: inline-flex;
+	padding: 5px 3px;
+
+	text-decoration: none;
+	color: #000000;
+}
+
+.catalog-navigation-link[aria-current="page"]::after {
+	position: absolute;
+	left: 3px;
+	bottom: 1px;
+
+	width: calc(100% - 6px);
+	height: 1px;
+
+	background-color: #000000;
+
+	content: "";
 }
 
 .site-navigation {
@@ -920,6 +978,7 @@ img {
 
 .main-slider {
 	position: relative;
+	z-index: 1;
 
 	background: linear-gradient(#ffe17f 134px, rgba(255, 255, 255, 0) 134px);
 }
@@ -927,31 +986,13 @@ img {
 /* Main Slider Card start */
 
 .slider-card {
-	position: relative;
-	z-index: 1;
-
-	display: grid;
+	display: none;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 40px;
 }
 
-.slider-card::before {
-	position: absolute;
-	top: 13px;
-	right: 49px;
-	z-index: -1;
-
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	min-width: 250px;
-	height: 135px;
-
-	font-weight: 700;
-	font-size: 180px;
-	color: #ffffff;
-
-	content: attr(data-slide-count);
+.slider-card-selected {
+	display: grid;
 }
 
 .slider-image {
@@ -977,9 +1018,13 @@ img {
 .slider-features {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
-	gap: 22px;
+	gap: 21px;
 	justify-content: start;
 	margin: 0;
+}
+
+.slider-features-wide {
+	gap: 41px;
 }
 
 .slider-feature {
@@ -1027,14 +1072,11 @@ img {
 }
 
 .slider-pagination {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	z-index: 1;
-
 	display: flex;
+	justify-content: center;
+	margin-top: -12px;
 
-	transform: translateX(-50%);
+	counter-reset: main-slider;
 }
 
 .slider-pagination-button {
@@ -1042,7 +1084,7 @@ img {
 	height: 12px;
 	margin-right: 20px;
 
-	transition: opacity 50ms ease-out;
+	counter-increment: main-slider;
 }
 
 .slider-pagination-button:last-child {
@@ -1050,6 +1092,25 @@ img {
 }
 
 .slider-pagination-button::before {
+	position: absolute;
+	top: 13px;
+	right: 49px;
+	z-index: -1;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	min-width: 250px;
+	height: 135px;
+
+	font-weight: 700;
+	font-size: 180px;
+	color: #ffffff;
+
+	content: none;
+}
+
+.slider-pagination-button::after {
 	display: block;
 	height: 100%;
 
@@ -1057,11 +1118,33 @@ img {
 	border: 2px solid #000000;
 	border-radius: 50%;
 
+	transition: opacity 50ms ease-out;
+
 	content: "";
 }
 
 .slider-pagination-button.is-current::before {
+	content: counter(main-slider, decimal-leading-zero);
+}
+
+.slider-pagination-button.is-current::after {
 	background-color: #000000;
+}
+
+.slider-pagination-button:hover::after {
+	opacity: 0.6;
+}
+
+.slider-pagination-button:active::after {
+	opacity: 0.3;
+}
+
+.slider-pagination-button:disabled::after {
+	opacity: 0.1;
+}
+
+.slider-pagination-button:disabled {
+	pointer-events: none;
 }
 
 
@@ -1079,7 +1162,7 @@ img {
 
 .categories-link {
 	display: grid;
-	grid-template-rows: min-content;
+	grid-template-rows: max-content;
 	row-gap: 33px;
 
 	text-decoration: none;
@@ -1156,6 +1239,7 @@ img {
 .services-wrapper {
 	display: grid;
 	grid-template-columns: 287px 1fr;
+	column-gap: 116px;
 }
 
 .services-list {
@@ -1256,14 +1340,21 @@ img {
 	}
 }
 
+.services-cards {
+	padding-top: 73px;
+}
+
 .services-card {
-	display: flex;
+	display: none;
 	justify-content: space-between;
-	padding: 73px 60px 0 116px;
+}
+
+.services-card-selected {
+	display: flex;
 }
 
 .services-info {
-	width: 455px;
+	width: 480px;
 }
 
 .services-title {
@@ -1273,9 +1364,29 @@ img {
 .services-delivery::after {
 	width: 139px;
 	height: 165px;
-	margin-top: 4px;
+	margin: 4px 60px 5px 0;
 
 	background: url("../icons/stack.svg#tabs-delivery") no-repeat center / contain;
+
+	content: "";
+}
+
+.services-warranty::after {
+	width: 172px;
+	height: 195px;
+	margin: -11px 28px -11px 0;
+
+	background: url("../icons/stack.svg#tabs-warranty") no-repeat center / contain;
+
+	content: "";
+}
+
+.services-credit::after {
+	width: 156px;
+	height: 188px;
+	margin: -7px 28px -7px 0;
+
+	background: url("../icons/stack.svg#tabs-credit") no-repeat center / contain;
 
 	content: "";
 }
@@ -1669,7 +1780,7 @@ img {
 
 	width: 100%;
 
-	border-bottom: 3px solid #000000;
+	border-bottom: 2px solid #000000;
 
 	content: "";
 }
@@ -1697,9 +1808,7 @@ img {
 .range-scale {
 	position: relative;
 
-	height: 2px;
-
-	background-color: #dcdcdc;
+	border-bottom: 2px solid #dcdcdc;
 }
 
 .range-bar {
@@ -1708,9 +1817,8 @@ img {
 	left: 0;
 
 	width: 119px;
-	height: 100%;
 
-	background-color: #000000;
+	border-bottom: 2px solid #000000;
 }
 
 .range-price {
@@ -2014,6 +2122,8 @@ img {
 
 .products-image-container::before {
 	position: absolute;
+	top: 0;
+	left: 0;
 	z-index: 1;
 
 	width: 100%;
@@ -2224,7 +2334,7 @@ img {
 	background-color: #dcdcdc;
 }
 
-.pagination-button[aria-disabled="true"] {
+.pagination-button:not([href]) {
 	color: rgba(68, 68, 68, 0.3);
 
 	pointer-events: none;
