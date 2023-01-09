@@ -502,7 +502,7 @@ img {
 	width: 14px;
 	height: 6px;
 
-	background: url("../icons/stack.svg#cart-popover-triangle") no-repeat 0 0 / 14px 6px;
+	background: url("../icons/stack.svg#popover-triangle") no-repeat 0 0 / 14px 6px;
 
 	content: "";
 }
@@ -1570,10 +1570,7 @@ img {
 
 .on-order-text {
 	grid-column: 2 / 3;
-	align-self: center;
-	justify-self: center;
-	max-width: 710px;
-	padding: 40px 0 36px 4px;
+	padding: 41px 57px 36px 61px;
 
 	font-size: 20px;
 	line-height: 23px;
@@ -1584,7 +1581,7 @@ img {
 	background: url("../icons/stack.svg#on-order-delivery") no-repeat center / 47px 32px;
 	background-color: #ffe17f;
 
-	transition: 150ms ease-out;
+	transition: background-color 150ms ease-out;
 
 	content: "";
 }
@@ -1605,10 +1602,10 @@ img {
 	width: 2px;
 	height: 12px;
 
-	background: url("../icons/stack.svg#on-order-info") no-repeat center / contain;
+	background: url("../icons/stack.svg#on-order-info") no-repeat 0 0 / 2px 12px;
 	opacity: 0.3;
 
-	transition: 150ms ease-out;
+	transition: opacity 150ms ease-out;
 
 	content: "";
 }
@@ -2534,4 +2531,384 @@ img {
 
 .pagination-number:active {
 	color: rgba(68, 68, 68, 0.1);
+}
+
+
+/* --- Modal --- */
+
+.modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	display: flex;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(240, 240, 240, 0.9);
+
+	transition: display 300ms ease-out 50ms;
+}
+
+.modal-container-close {
+	display: none;
+}
+
+.modal {
+	position: relative;
+
+	padding: 62px 70px;
+
+	background-color: #ffffff;
+	border: 10px solid #000000;
+	box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.modal-on-order {
+	width: 920px;
+}
+
+.modal-close-button {
+	position: absolute;
+	top: 74px;
+	right: 70px;
+
+	width: 26px;
+	height: 26px;
+}
+
+.modal-close-button::before {
+	display: block;
+	height: 100%;
+
+	background: url("../icons/stack.svg#modal-cross") no-repeat 0 0 / 26px 26px;
+
+	content: "";
+}
+
+.modal-close-button::after {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+
+	content: "";
+}
+
+.modal-close-button:hover::before {
+	opacity: 0.6;
+}
+
+.modal-close-button:active::before {
+	opacity: 0.3;
+}
+
+.modal-title {
+	max-width: 650px;
+	margin-bottom: 42px;
+}
+
+
+/* Modal Form */
+
+.on-order-form {
+	display: grid;
+	grid-template-columns: 360px 140px 180px;
+	column-gap: 40px;
+}
+
+.on-order-group {
+	min-height: 114px;
+	margin: 0 0 42px;
+}
+
+.on-order-email {
+	grid-column: 2 / 4;
+}
+
+.on-order-goods {
+	grid-column: 1 / 3;
+	margin-bottom: 22px;
+}
+
+.on-order-control {
+	display: flex;
+	flex-direction: column;
+}
+
+.on-order-label {
+	margin-bottom: 14px;
+}
+
+.on-order-field {
+	padding: 18px 63px 18px 18px;
+
+	font-family: inherit;
+
+	background-repeat: no-repeat;
+	background-position: right 18px top 22px;
+	background-size: 15px 12px;
+	background-color: #f0f0f0;
+	border: 2px solid rgba(255, 255, 255, 0);
+
+	transition: background-color 150ms ease-out;
+}
+
+.on-order-field::placeholder {
+	color: #000000;
+	opacity: 0.3;
+}
+
+.on-order-field-name {
+	background-image: url("../icons/stack.svg#modal-customer-name");
+}
+
+.on-order-field-email {
+	background-image: url("../icons/stack.svg#modal-customer-email");
+}
+
+.on-order-field-goods {
+	padding-right: 18px;
+
+	background: #f0f0f0;
+}
+
+.on-order-field:not(:placeholder-shown) {
+	background-color: #ebebeb;
+}
+
+.on-order-field:hover {
+	background-color: #dcdcdc;
+}
+
+.on-order-field:disabled {
+	opacity: 0.3;
+}
+
+.on-order-field:disabled:hover {
+	background-color: #f0f0f0;
+}
+
+.on-order-field:not(:placeholder-shown):disabled:hover {
+	background-color: #ebebeb;
+}
+
+.on-order-field.has-error {
+	border: 2px solid #ff3d3d;
+}
+
+.on-order-message {
+	display: none;
+	margin: 2px 0 -2px;
+
+	font-size: 14px;
+	line-height: 20px;
+	color: #000000;
+}
+
+.on-order-message.is-shown {
+	display: block;
+}
+
+.on-order-error {
+	display: block;
+
+	color: #ff3d3d;
+}
+
+.form-button-wrapper {
+	grid-column: 1 / -1;
+	justify-self: start;
+}
+
+.on-order-form-button {
+	min-width: 191px;
+	max-width: 280px;
+}
+
+
+/* Modal Form Number */
+
+.on-order-number {
+	min-height: 94px;
+}
+
+.on-order-label-tooltip {
+	display: flex;
+	margin-bottom: 14px;
+}
+
+.on-order-field-number {
+	display: grid;
+	grid-template-columns: repeat(3, 60px);
+}
+
+.on-order-field-number.has-error {
+	outline: 2px solid #ff3d3d;
+}
+
+.on-order-number-input {
+	padding: 20px 4px 20px 5px;
+
+	font-family: inherit;
+	text-align: center;
+
+	background-color: #f0f0f0;
+	border: 0;
+
+	transition: background-color 150ms ease-out;
+
+	appearance: textfield;
+}
+
+.on-order-number-input::-webkit-outer-spin-button,
+.on-order-number-input::-webkit-inner-spin-button {
+	margin: 0;
+
+	appearance: none;
+}
+
+.on-order-number-input:hover {
+	background-color: #dcdcdc;
+}
+
+.on-order-number-input:disabled:hover {
+	background-color: #f0f0f0;
+}
+
+.on-order-number-button {
+	padding: 22px;
+
+	background-color: #f0f0f0;
+	border: 0;
+
+	transition: background-color 150ms ease-out;
+
+	cursor: pointer;
+}
+
+.on-order-number-button::before {
+	width: 16px;
+	height: 16px;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+	transition: opacity 150ms ease-out;
+
+	content: "";
+}
+
+.on-order-number-minus::before {
+	background-image: url("../icons/stack.svg#modal-number-minus");
+}
+
+.on-order-number-plus::before {
+	background-image: url("../icons/stack.svg#modal-number-plus");
+}
+
+.on-order-number-button:hover {
+	background-color: #ebebeb;
+}
+
+.on-order-number-button:hover::before {
+	opacity: 0.6;
+}
+
+.on-order-number-input:focus,
+.on-order-number-button:focus-visible {
+	outline: 2px solid #af4fff;
+	outline-offset: -2px;
+}
+
+@supports not selector(:focus-visible) {
+	.on-order-number-button:focus {
+		outline: 2px solid #af4fff;
+		outline-offset: -2px;
+	}
+}
+
+.on-order-number-button:active {
+	background-color: #f0f0f0;
+}
+
+.on-order-number-button:active::before {
+	opacity: 0.3;
+}
+
+.on-order-number-input:disabled,
+.on-order-number-button:disabled {
+	opacity: 0.3;
+
+	pointer-events: none;
+}
+
+.on-order-number-button:disabled::before {
+	opacity: 0.3;
+}
+
+.on-order-form-tooltip {
+	position: relative;
+
+	flex-shrink: 0;
+	width: 26px;
+	height: 26px;
+	margin: -3px 0 -3px 9px;
+}
+
+.form-tooltip-toggle {
+	width: 100%;
+	height: 100%;
+
+	background-color: #ffe17f;
+	border-radius: 50%;
+}
+
+.form-tooltip-toggle::before {
+	width: 4px;
+	height: 12px;
+
+	background: url("../icons/stack.svg#modal-tooltip-icon") no-repeat 0 0 / 4px 12px;
+
+	content: "";
+}
+
+.form-tooltip-text {
+	position: absolute;
+	right: -34px;
+	z-index: 10;
+
+	display: none;
+
+	width: 200px;
+	margin-top: 10px;
+	padding: 19px 20px 21px;
+
+	color: #ffffff;
+
+	background-color: #000000;
+	box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-tooltip-text::before {
+	position: absolute;
+	top: -6px;
+	right: 40px;
+
+	width: 14px;
+	height: 6px;
+
+	background: url("../icons/stack.svg#popover-triangle") no-repeat 0 0 / 14px 6px;
+
+	content: "";
+}
+
+.form-tooltip-toggle:focus {
+	outline: none;
+}
+
+.form-tooltip-toggle:hover + .form-tooltip-text,
+.form-tooltip-toggle:focus + .form-tooltip-text {
+	display: block;
 }

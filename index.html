@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Главная | Девайс | HTML Academy</title>
 		<link rel="stylesheet" href="./styles/styles.min.css">
+		<link rel="icon" href="./favicon.ico" sizes="any">
 	</head>
 
 	<body>
@@ -300,7 +301,7 @@
 				<div class="services-wrapper container">
 					<h2 class="visually-hidden">Наши услуги</h2>
 
-					<!-- Класс "services-tab-selected" - для выбора вкладки. Чтобы выбрать вкладку, нужно также удалить у кнопки класс "button-yellow". -->
+					<!-- Для выбора вкладки - добавить кнопке класс "services-tab-selected" и удалить класс "button-yellow" -->
 
 					<ul class="services-list reset-list">
 						<li class="services-item">
@@ -497,5 +498,82 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- Для открытия модального окна - удалить у него класс "modal-container-close" -->
+
+		<div class="modal-container modal-container-close flex-center">
+			<div class="modal modal-on-order">
+				<button class="modal-close-button normalize-button focus-outline" type="button">
+					<span class="visually-hidden">Закрыть</span>
+				</button>
+
+				<section class="modal-content">
+					<h2 class="modal-title page-title">Доставка под заказ</h2>
+
+					<form class="on-order-form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
+
+						<!-- Для показа сообщения добавить ему класс "is-shown" -->
+
+						<p class="on-order-group">
+							<label class="on-order-control">
+								<span class="on-order-label text-bold">Ваше имя:</span>
+								<input class="on-order-field on-order-field-name text-small focus-outline" type="text" name="customer-name" placeholder="Введите имя" required>
+							</label>
+							<span class="on-order-message"></span>
+						</p>
+
+						<!-- Для показа ошибки добавить классы - текстовому полю "has-error", сообщению об ошибке "on-order-error" -->
+
+						<p class="on-order-group on-order-email">
+							<label class="on-order-control">
+								<span class="on-order-label text-bold">Ваш e-mail:</span>
+								<input class="on-order-field on-order-field-email text-small focus-outline" type="email" name="customer-email" placeholder="Введите e-mail" required>
+							</label>
+							<span class="on-order-message">Забавный у вас адрес</span>
+						</p>
+
+						<p class="on-order-group on-order-goods">
+							<label class="on-order-control">
+								<span class="on-order-label text-bold">Что нужно привезти:</span>
+								<input class="on-order-field on-order-field-goods text-small focus-outline" type="text" name="customer-goods" placeholder="В свободной форме" required>
+							</label>
+							<span class="on-order-message"></span>
+						</p>
+
+						<div class="on-order-group on-order-number">
+							<div class="on-order-label-tooltip">
+								<label class="text-bold" for="customer-number">Количество:</label>
+
+								<div class="on-order-form-tooltip">
+									<button class="form-tooltip-toggle normalize-button flex-center" type="button" aria-labelledby="tooltip-label-number">
+									</button>
+									<span class="form-tooltip-text text-small" role="tooltip" id="tooltip-label-number">
+										Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к&nbsp;провозу багажа.
+									</span>
+								</div>
+							</div>
+
+							<!-- Для показа ошибки добавить обертке класс "has-error" -->
+
+							<div class="on-order-field-number">
+								<button class="on-order-number-button on-order-number-minus flex-center" type="button">
+									<span class="visually-hidden">Уменьшить количество</span>
+								</button>
+								<input class="on-order-number-input text-small" type="number" id="customer-number" name="customer-number" value="1" min="0" required>
+								<button class="on-order-number-button on-order-number-plus flex-center" type="button">
+									<span class="visually-hidden">Увеличить количество</span>
+								</button>
+							</div>
+						</div>
+
+						<div class="form-button-wrapper button-yellow-wrapper">
+							<button class="on-order-form-button button-yellow text-subtitle normalize-button" type="submit">
+								Отправить
+							</button>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
 	</body>
 </html>
