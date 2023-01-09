@@ -249,8 +249,8 @@ img {
 
 .user-menu {
 	display: grid;
-	grid-template-columns: 521px 236px 1fr;
-	column-gap: 20px;
+	grid-template-columns: 520px 234px 1fr;
+	column-gap: 22px;
 	align-items: start;
 	margin-bottom: 30px;
 }
@@ -376,7 +376,7 @@ img {
 
 .user-menu-button {
 	display: flex;
-	padding: 2px 3px;
+	padding: 2px;
 
 	text-decoration: none;
 	color: #000000;
@@ -392,7 +392,7 @@ img {
 }
 
 .login-button {
-	padding-left: 2px;
+	padding-left: 1px;
 }
 
 .login-button::before {
@@ -404,8 +404,8 @@ img {
 }
 
 .log-ut-button {
-	margin-left: 6px;
-	padding: 2px 3px;
+	margin-left: 8px;
+	padding: 2px;
 
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.3);
@@ -420,7 +420,7 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-right: 2px;
+	margin-right: 3px;
 }
 
 .user-products-item {
@@ -448,7 +448,7 @@ img {
 }
 
 .cart-button {
-	padding-left: 2px;
+	padding-left: 1px;
 }
 
 .cart-button::before {
@@ -466,8 +466,8 @@ img {
 	order: -1;
 	min-width: 21px;
 	height: 21px;
-	margin: 5px -3px 0 0;
-	padding: 0 1px;
+	margin: 4.5px -3px 0 0;
+	padding: 0 1px 0.5px;
 
 	font-size: 14px;
 	line-height: 17px;
@@ -481,7 +481,7 @@ img {
 .cart-popover {
 	position: absolute;
 	top: calc(100% + 5px);
-	right: -74px;
+	right: -75px;
 	z-index: 3;
 
 	display: none;
@@ -755,18 +755,18 @@ img {
 .site-navigation {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 522px;
+	max-width: 525px;
 }
 
 .site-navigation-item {
-	margin: 5px 0 5px 40px;
+	margin: 5px 0 5px 42px;
 }
 
 .site-navigation-link {
 	position: relative;
 
 	display: block;
-	padding: 10px 1px 9px 5px;
+	padding: 10px 0 9px 5px;
 }
 
 .site-navigation-link[aria-current="page"]::after {
@@ -774,7 +774,7 @@ img {
 	left: 5px;
 	bottom: 3px;
 
-	width: calc(100% - 9px);
+	width: calc(100% - 8px);
 	height: 2px;
 
 	background-color: #000000;
@@ -822,7 +822,7 @@ img {
 .footer-center-column {
 	display: grid;
 	align-content: start;
-	max-width: 454px;
+	max-width: 453px;
 	margin-top: 65px;
 }
 
@@ -853,7 +853,7 @@ img {
 }
 
 .footer-navigation-item {
-	margin: 0 26px 6px 0;
+	margin: 0 27px 6px 0;
 }
 
 .footer-navigation-item:nth-child(3n) {
@@ -871,15 +871,15 @@ img {
 	position: relative;
 
 	display: block;
-	padding: 10px 1px 9px 5px;
+	padding: 10px 0 9px 5px;
 }
 
 .footer-navigation-link::after {
 	position: absolute;
 	left: 5px;
-	bottom: 4px;
+	bottom: 3px;
 
-	width: calc(100% - 9px);
+	width: calc(100% - 8px);
 	height: 2px;
 
 	background-color: rgba(255, 255, 255, 0);
@@ -898,6 +898,7 @@ img {
 	display: flex;
 	justify-self: center;
 	max-width: 370px;
+	margin-left: 2px;
 }
 
 .footer-social-item {
@@ -1008,10 +1009,9 @@ img {
 
 .footer-developer::before {
 	display: block;
-	width: 115px;
-	height: 33px;
+	height: 100%;
 
-	mask: url("../icons/stack.svg#footer-logo-developer") no-repeat 0 0 / 115px 33px;
+	mask: url("../icons/stack.svg#footer-logo-developer");
 	background-color: #ffc700;
 
 	transition: background-color 150ms ease-out, opacity 150ms ease-out;
@@ -1056,7 +1056,7 @@ img {
 
 	display: inline-block;
 	min-width: 210px;
-	max-width: 340px;
+	max-width: 334px;
 	padding: 10px 13px 9px 17px;
 
 	text-align: center;
@@ -1179,7 +1179,7 @@ img {
 .slider-features {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
-	gap: 21px;
+	gap: 22px;
 	justify-content: start;
 	margin: 0;
 }
@@ -1696,7 +1696,7 @@ img {
 }
 
 .about-more {
-	min-width: 257px;
+	min-width: 258px;
 }
 
 .company-info-subtitle {
@@ -2131,7 +2131,7 @@ img {
 	background-color: #000000;
 	border-radius: 50%;
 
-	transform: translateX(5%);
+	transform: translateX(0.5px);
 
 	content: "";
 }
@@ -2190,6 +2190,7 @@ img {
 
 .sorting-select {
 	min-width: 142px;
+	margin-right: 2px;
 	padding: 0 32px 0 0;
 
 	font: inherit;
@@ -2198,8 +2199,6 @@ img {
 	background: url("../icons/stack.svg#sorting-select-icon") no-repeat right top / 30px 30px;
 	background-color: rgba(255, 255, 255, 0);
 	border: 0;
-
-	transition: opacity 150ms ease-out;
 
 	cursor: pointer;
 
@@ -2854,7 +2853,7 @@ img {
 	flex-shrink: 0;
 	width: 26px;
 	height: 26px;
-	margin: -3px 0 -3px 9px;
+	margin: -3px 0 -3px 8px;
 }
 
 .form-tooltip-toggle {
@@ -2883,7 +2882,7 @@ img {
 
 	width: 200px;
 	margin-top: 10px;
-	padding: 19px 20px 21px;
+	padding: 19px 21px 21px;
 
 	color: #ffffff;
 
