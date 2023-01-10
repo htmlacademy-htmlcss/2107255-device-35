@@ -249,8 +249,8 @@ img {
 
 .user-menu {
 	display: grid;
-	grid-template-columns: 520px 234px 1fr;
-	column-gap: 22px;
+	grid-template-columns: 519px 233px 1fr;
+	column-gap: 24px;
 	align-items: start;
 	margin-bottom: 30px;
 }
@@ -376,7 +376,7 @@ img {
 
 .user-menu-button {
 	display: flex;
-	padding: 2px;
+	padding: 2px 1px;
 
 	text-decoration: none;
 	color: #000000;
@@ -392,7 +392,7 @@ img {
 }
 
 .login-button {
-	padding-left: 1px;
+	padding-left: 0;
 }
 
 .login-button::before {
@@ -404,7 +404,7 @@ img {
 }
 
 .log-ut-button {
-	margin-left: 8px;
+	margin-left: 9px;
 	padding: 2px;
 
 	text-decoration: none;
@@ -420,7 +420,7 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-right: 3px;
+	margin-right: 5px;
 }
 
 .user-products-item {
@@ -435,6 +435,11 @@ img {
 	margin-right: 0;
 }
 
+.compare-button,
+.cart-button {
+	padding: 2px 0;
+}
+
 .compare-button::before {
 	width: 10px;
 	height: 12px;
@@ -445,10 +450,6 @@ img {
 
 .cart-item {
 	position: relative;
-}
-
-.cart-button {
-	padding-left: 1px;
 }
 
 .cart-button::before {
@@ -464,10 +465,11 @@ img {
 	z-index: 1;
 
 	order: -1;
+	align-self: flex-start;
 	min-width: 21px;
-	height: 21px;
+	min-height: 21px;
 	margin: 4.5px -3px 0 0;
-	padding: 0 1px 0.5px;
+	padding: 0 1px;
 
 	font-size: 14px;
 	line-height: 17px;
@@ -481,7 +483,7 @@ img {
 .cart-popover {
 	position: absolute;
 	top: calc(100% + 5px);
-	right: -75px;
+	right: -77px;
 	z-index: 3;
 
 	display: none;
@@ -2500,19 +2502,22 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	align-self: center;
-	max-width: 280px;
+	max-width: 300px;
 	margin: 16px 0 15px;
 }
 
 .pagination-number,
 .pagination-divider {
 	display: block;
-	width: 40px;
-	padding: 10px 0;
+	min-width: 40px;
+	max-width: 65px;
+	padding: 10px 4px;
 
 	text-align: center;
 	text-decoration: none;
 	color: rgba(68, 68, 68, 0.3);
+
+	white-space: nowrap;
 }
 
 .pagination-number[aria-current="page"] {
@@ -2639,7 +2644,7 @@ img {
 }
 
 .on-order-field {
-	padding: 18px 63px 18px 18px;
+	padding: 18px 58px 18px 18px;
 
 	font-family: inherit;
 
